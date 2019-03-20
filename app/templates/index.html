@@ -1,0 +1,44 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Мой сайт c сообщениями</title>
+        {% else %}
+        <title>Добро пожаловать на мой сайт</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Привет, {{ user.username }}!</h1>
+
+        		<!-- добавлено 20.03.2019 -->
+        <p align="left">
+            [ <a href="/create">Создать новое сообщение</a> ]
+            <br><hr size="1" width="400" align="left">
+
+        </p>
+
+
+        {% for post in posts %}
+<!--
+     ######
+                        см. отображение  routes.py
+     ######
+-->
+        <!-- div><p>#{{ post.title }} сказал: <b>{{ post.text }}</b></p></div-->
+        <div>
+            <p><i>{{ post.created }}</i> &nbsp;&nbsp;&nbsp; <b>{{ post.title }}</b>
+             <br>{{ post.text }}
+            <br><hr size="1" width="400" align="left"></p>
+        </div>
+        {% endfor %}
+
+
+
+        		<!-- добавлено 20.03.2019 -->
+        <p align="left">
+            <br><hr size="1" width="400" align="left">
+		[ <a href="/create">Создать новое сообщение</a> ]
+        </p>
+
+
+    </body>
+</html>

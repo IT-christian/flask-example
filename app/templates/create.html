@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отправка комментария</title>
+</head>
+<body>
+
+<p>
+    		[ <a href="/">Вернуться назад</a> ]
+             <br><hr size="1" width="400" align="left">
+
+</p>
+
+    <h2>Отправка сообщения:</h2>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+         <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=100) }}
+        </p>
+        <p>
+            {{ form.text.label }}<br>
+            {{ form.text(size=300) }}
+        </p>
+        <p>{{ form.send() }}</p>                     <!--    что использовать "send" или "submit" см. forms.py   -->
+    </form>
+</body>
+</html>
